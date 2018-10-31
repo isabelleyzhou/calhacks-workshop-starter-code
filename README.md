@@ -43,7 +43,7 @@ So let’s start by making a few Welcome objects! As you can see, each Welcome o
 	<Welcome name=’Trevor’/>
 	<Welcome name=’Amitav’/>
 
-Great! Now you have three different Welcome objects that will render the same output every time. But what if you want that output to change? Well, that’s why state variables exist!
+Great! Now you have three different Welcome components that will render the same output every time. But what if you want that output to change? Well, that’s why state variables exist!
 
 ## State Variables
 
