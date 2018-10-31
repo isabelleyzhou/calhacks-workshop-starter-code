@@ -2,8 +2,10 @@
 
 In order to clean up your code, it’s beneficial to use components. A component is a functionality of React that allows you to separate parts of your code and abstract them in the main code. 
 
-Think of each component as an *independent and *reusable* piece of code where different components interact together in the main code. 
+Think of each component as an *independent* and *reusable* piece of code where different components interact together in the main code. 
+
 **Independent** —  components can work in isolation. Once a fully-functioning component is created, it can be abstracted away and used independently in other parts of code
+
 **Reusable** —  components keep you from re-copying and pasting code; instead, by sectioning off the code into a component, only the component needs to be recalled.
 
 Components work much like JavaScript functions in the sense that they take in props (see documentation below) and determine what should appear on screen. 
