@@ -75,14 +75,14 @@ Here, count increases by one every time this.setState is called. It also automat
 Components can be used in defining other components as well.  For example, an App component could run our Welcome many times:
 
 	function App() {
-		return (
-			<div>
-				<Welcome name=’Parth’/>
-				<Welcome name=’Trevor’/>
-				<Welcome name=’Amitav’/>
-			</div>
-		);
-	}
+	  return (
+	    <div>
+	      <Welcome name=’Parth’/>
+	      <Welcome name=’Trevor’/>
+	      <Welcome name=’Amitav’/>
+	    </div>
+          );
+        }
 
 A component should be simple and easy to read. If a component every becomes too complicated, don’t be afraid to split the component into smaller components! For example, in this following function we have a Comment component. 
 
