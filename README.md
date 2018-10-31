@@ -16,17 +16,17 @@ There are two ways to define a component: as a function and as a class.
 
 **Function**
 
-function Welcome (props) {
-	return <h1> Hello, {props.name} </h1>;
-}
+	function Welcome (props) {
+		return <h1> Hello, {props.name} </h1>;
+	}
 
 **Class**
 
-class Welcome extends React.Component{
-	render(){
-		return <h1> Hello, {this.props.name} </h1>;
+	class Welcome extends React.Component{
+		render(){
+			return <h1> Hello, {this.props.name} </h1>;
+		}
 	}
-}
 
 So what exactly is happening in {this.props.name}?
 
@@ -39,9 +39,9 @@ From the class component that you made above, you already know that you will be 
 
 So let’s start by making a few Welcome objects! As you can see, each Welcome object takes in a different name.
  
-<Welcome name=’Parth’/>
-<Welcome name=’Trevor’/>
-<Welcome name=’Amitav’/>
+	<Welcome name=’Parth’/>
+	<Welcome name=’Trevor’/>
+	<Welcome name=’Amitav’/>
 
 Great! Now you have three different Welcome objects that will render the same output every time. But what if you want that output to change? Well, that’s why state variables exist!
 
@@ -74,72 +74,72 @@ Here, count increases by one every time this.setState is called. It also automat
 
 Components can be used in defining other components as well.  For example, an App component could run our Welcome many times:
 
-function App() {
-	return (
-		<div>
-			<Welcome name=’Parth’/>
-<Welcome name=’Trevor’/>
-<Welcome name=’Amitav’/>
-</div>
-	);
-}
+	function App() {
+		return (
+			<div>
+				<Welcome name=’Parth’/>
+				<Welcome name=’Trevor’/>
+				<Welcome name=’Amitav’/>
+			</div>
+		);
+	}
 
 A component should be simple and easy to read. If a component every becomes too complicated, don’t be afraid to split the component into smaller components! For example, in this following function we have a Comment component. 
 
-function Comment(props) {
-  return (
-    <div className="Comment">
-      <div className="UserInfo">
-        <img className="Avatar"
-          src={props.author.avatarUrl}
-          alt={props.author.name}
-        />
-        <div className="UserInfo-name">
-          {props.author.name}
-        </div>
-      </div>
-      <div className="Comment-text">
-        {props.text}
-      </div>
-      <div className="Comment-date">
-        {formatDate(props.date)}
-      </div>
-    </div>
-  );
-}
+	function Comment(props) {
+	  return (
+	    <div className="Comment">
+	      <div className="UserInfo">
+		<img className="Avatar"
+		  src={props.author.avatarUrl}
+		  alt={props.author.name}
+		/>
+		<div className="UserInfo-name">
+		  {props.author.name}
+		</div>
+	      </div>
+	      <div className="Comment-text">
+		{props.text}
+	      </div>
+	      <div className="Comment-date">
+		{formatDate(props.date)}
+	      </div>
+	    </div>
+	  );
+	}
 
 
 However, the code here is quite long and disorganized. Thus, we can abstract away some of this into different components. For example, the UserInfo div can become a different component! The UserInfo component would look something like this: 
 
-function UserInfo(props) {
-  return (
- 	<div className="UserInfo">
-        <img className="Avatar"
-          src={props.author.avatarUrl}
-          alt={props.author.name}
-        />
-        <div className="UserInfo-name">
-          {props.author.name}
-        </div>
-      </div>
+	function UserInfo(props) {
+	  return (
+		<div className="UserInfo">
+		<img className="Avatar"
+		  src={props.author.avatarUrl}
+		  alt={props.author.name}
+		/>
+		<div className="UserInfo-name">
+		  {props.author.name}
+		</div>
+	      </div>
 
-  );
-}
+	  );
+	}
 
 With this, the Comment component can be simplified to the following: 
 
-function Comment(props) {
-  return (
-    <div className="Comment">
-      <UserInfo user={props.author} />
-      <div className="Comment-text">
-        {props.text}
-      </div>
-      <div className="Comment-date">
-        {formatDate(props.date)}
-      </div>
-    </div>
-  );
-}
+	function Comment(props) {
+	  return (
+	    <div className="Comment">
+	      <UserInfo user={props.author} />
+	      <div className="Comment-text">
+		{props.text}
+	      </div>
+	      <div className="Comment-date">
+		{formatDate(props.date)}
+	      </div>
+	    </div>
+	  );
+	}
 
 Notice how this can be simplified further if the Avatar className is sectioned off into another component. Try this yourself if you’d like to see more efficient code!
