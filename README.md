@@ -13,11 +13,15 @@ Components work much like JavaScript functions in the sense that they take in pr
 Take a look at our sample code to get a better understanding the necessity of having components.The to-do list items in our sample code are a perfect opportunity for us to use components. Since there are multiple items with similar styling and the text for each item is the only that changes, this means  the item itself is the component and the text is the prop.
 
 There are two ways to define a component: as a function and as a class.
+
 **Function**
+
 function Welcome (props) {
 	return <h1> Hello, {props.name} </h1>;
 }
+
 **Class**
+
 class Welcome extends React.Component{
 	render(){
 		return <h1> Hello, {this.props.name} </h1>;
